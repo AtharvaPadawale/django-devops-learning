@@ -1,0 +1,5 @@
+djo_venv/
+__pycache__/
+*.pyc
+.git/
+db.sqlite3
