@@ -1,0 +1,10 @@
+services:   # Define each containerized service here 
+    web:        # Service name
+        #build: .           #-->build new image from the existing folder 
+        image: django-app-containerization:v1   #reuser existing image
+        container_name: django-app-containerization
+
+        ports:
+            - "8000:8000"     #Map host:container ports
+
+        command: python manage.py runserver 0.0.0.0:8000
