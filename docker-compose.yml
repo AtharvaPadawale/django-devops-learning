@@ -1,10 +1,11 @@
 services:   # Define each containerized service here 
     web:        # Service name
-        #build: .           #-->build new image from the existing folder 
-        image: django-app-containerization:v1   #reuser existing image
+        # build: .           #  -->build new image from the existing folder 
+        image: django-app-containerization:v1   # reuse existing image
+        # image: dockerhub_username/django-app:v1          #  -->  image from registery if not locally availble 
+        # image: 123456789012.dkr.ecr.us-east-1.amazonaws.com/django-app:v1     #  -->  image from aws if not locally availble
         container_name: django-app-containerization
-
         ports:
-            - "8000:8000"     #Map host:container ports
+            - "8000:8000"     #  Map host:container ports
 
         command: python manage.py runserver 0.0.0.0:8000
